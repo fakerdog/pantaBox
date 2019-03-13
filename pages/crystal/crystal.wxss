@@ -1,0 +1,222 @@
+/* pages/crystal/crystal.wxss */
+
+page{
+  height: 100%;
+  font-size: 32rpx;
+}
+
+swiper {
+  align-items: flex-end;
+}
+
+swiper image {
+  width: 100%;
+}
+
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.top-banner{
+  width: 100%;
+  height: 260rpx;
+  background-color: #FF9800;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:40rpx;
+}
+
+.top-right{
+  position: relative;
+  left: -20rpx;
+}
+
+.genel-view{
+   display: flex;
+   width:84%;
+   height: 150rpx;
+   justify-content: space-between;
+   margin-bottom: 26rpx;
+   border-radius: 20rpx;
+   box-shadow: 4rpx 4rpx 20rpx rgb(206, 205, 205);
+   align-items: center;
+   position: relative;
+}
+.doub-view{
+  display: flex;
+  width:84%;
+  height: 150rpx;
+   justify-content: space-between;
+   margin-bottom: 26rpx;
+  border: none;
+}
+
+.fir-view,.sec-view{
+  position: relative;
+  display: flex;
+  width: 46%;
+  height: 100%;
+  border-radius: 20rpx;
+  box-shadow: 4rpx 4rpx 20rpx rgb(206, 205, 205);
+  align-items: center;
+}
+
+.right-wrapper{
+  position: absolute;
+  font-size: 28rpx;
+  color: #888;
+  right:30rpx;
+}
+.right-wrapper2{
+  position: absolute;
+  color: #888;
+  right:28rpx;
+  font-size: 28rpx;
+}
+.add-crystal{
+  font-size: 26rpx;
+  color: #888;
+  padding-left: 10rpx;
+}
+.left-title{
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+}
+.small-wrapper{
+  padding-left: 20rpx;
+}
+.head{
+  width: 84%;
+}
+.slide-image {
+   width: 100%;
+}
+.sevice{
+  font-size: 30rpx;
+  color: #888;
+}
+
+.csdimg button{
+  display: block;
+  width:150rpx;
+  height:70rpx;
+  padding: 0;
+  background: none;
+  border:none;
+  border-radius:20rpx;
+}
+.csdimg image{
+  display: block;
+  margin: 0;
+  width:150rpx;
+  height:70rpx;
+}
+.goChou{
+  display: flex;
+  padding-top: 35rpx;
+  align-items: center;
+}
+.csdimg{
+  position:fixed;
+  bottom: 34rpx;
+  left:50rpx;
+  z-index: 20;
+}
+button::after{content:"";border: none;}
+
+.tips-view{
+  font-size: 28rpx;
+}
+
+.sanjiao{
+  position: absolute;
+  width:0;
+  border-bottom: 30rpx solid #fff;
+  border-left: 20rpx solid #FF9800;
+  border-right: 20rpx solid #FF9800;
+  right: 0rpx;
+  bottom:-10rpx;
+  z-index:300;
+}
+.tips-content{
+  display: table;
+  position: absolute;
+  background-color: #fff;
+  width: 460rpx;
+  height: 100rpx;
+  right: -20rpx;
+  bottom: -102rpx;
+  box-shadow: 4rpx 4rpx 20rpx rgb(206, 205, 205);
+  color: #000;
+  font-size: 28rpx;
+  font-family: microsoft yahei;
+  z-index:500;
+}
+.table{
+  padding-left: 20rpx;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.shuijingSum{
+  color: #fff;
+}
+
+.btnDraw {
+  position: relative;
+  width: 160rpx;
+  font-size: 28rpx;
+  color: #888;
+  height: 62rpx;
+  line-height: 62rpx;
+  border-radius: 30rpx;
+  box-shadow: 4rpx 4rpx 20rpx rgb(206, 205, 205);
+  display: inline-block;
+}
+.notDone{
+  position: absolute;
+  color: #FF9A1A;
+  right:28rpx;
+  font-size: 28rpx;
+}
+.shareBtn{
+  position: absolute;
+  color: #FF9A1A;
+  background-color:rgba(225,225,225,0);
+  font-size: 28rpx;
+  right: 0rpx;
+}
+.shareBtn2{
+  position: absolute;
+  color: #888;
+  background-color:rgba(225,225,225,0);
+  font-size: 28rpx;
+  right: 0rpx;
+}
+.wenhao{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  margin-top: -10rpx;
+  margin-left: 20rpx;
+}
+.redDos{
+  position: absolute;
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #E51C23;
+  border-radius: 50%;
+  right: 20rpx;
+  top: 10rpx;
+}

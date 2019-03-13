@@ -1,0 +1,147 @@
+<!--index.wxml-->
+<view class="promotion-container">
+  <view class='panda' bindtap='showview'>
+    <image  src="{{panadaGif}}"></image>
+  </view>
+  <view class='share' bindtap='shareview'>
+     <button open-type='share' ><image   src="{{sharePng}}"></image></button>
+  </view>
+ 
+<!-- </view> -->
+
+<!-- 轮播图 -->
+<view class='head'>
+ <block wx:if="{{banner}}">
+  <swiper indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true'>
+    <block wx:for="{{banner}}" wx:key='item.id'>
+    <navigator target="miniProgram" open-type='navigate' app-id="{{item.appId}}" path="{{item.path}}">
+      <swiper-item data-d='{{item.appId}}' data-p='{{item.path}}' bindtap='toapp'>
+        <image src="{{item.imgUrl}}" class="slide-image" mode='widthFix' />
+      </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+</block> 
+</view>
+<!-- <view class='panda-sige'>
+        <view class='panda-sigeleft'><image   src="{{sigepng}}"></image></view>
+        <view class='panda-sigesj'><image   src="{{sjpng}}"></image></view>
+        <view class='panda-sigetext'>{{shuijing}}</view>
+        <view class='panda-sigeright'>
+          <navigator target="miniProgram"  open-type="navigate" app-id="wxa8d04da78e0b0fdb" path="{{drawpath}}" version="trial">
+          <button bindtap='godraw'><image   src="{{todrawpng}}"></image></button>
+          </navigator>
+        </view>
+</view> -->
+
+
+<!-- 高版本显示这些代码 -->
+<scroll-view class='body-v' scroll-y >
+
+<block wx:if="{{caniuse}}">
+ <view wx:for='{{apps}}' wx:index="index" wx:key="key"  class="item">
+    <view class='section_classify'>
+      <view class="section__url">
+        <image   src="{{item.clsUrl}}"></image>
+      </view>
+      <view class="section__title">{{item.clsName}}</view>
+    </view>
+    <view class="content">
+      <view wx:for='{{item.apps}}' wx:index="index" wx:key="key" class='app-item' bindlongpress="showShareGameModule"  data-apptitle='{{item.title}}' data-avatar='{{item.imgUrl}}' data-desc="{{item.players}}"> 
+        <view class="app-item-content">
+         <navigator data-aid="{{item.id}}" style='margin-left:17rpx' data-appId="{{item.appId}}" class="start-navigator" target="miniProgram" open-type='navigate' app-id="{{item.appId}}" bindtap='gemePv'  path="{{item.path}}">
+          <image class="app-image" src='{{item.imgUrl}}' mode='aspectFit'></image>
+          </navigator>
+          <view class='content-title'>
+            {{item.title}}
+          </view>
+           <!-- <view class='content-play'>
+            <view class="section-color">{{item.players}}</view><label>人在玩</label>
+          </view> -->
+        </view>
+
+
+</view>
+      </view>
+    </view>
+       <view class='baseline'>{{baseline}}</view>
+
+  </block> 
+
+
+
+  <!-- 低版本显示这些代码 -->
+   <block wx:else>
+    <view wx:for='{{apps}}' wx:index="index" wx:key="key"  class="item">
+    <view class='section_classify'>
+      <view class="section__url">
+        <image   src="{{item.clsUrl}}"></image>
+      </view>
+      <view class="section__title">{{item.clsName}}</view>
+    </view>
+    <view class="content">
+      <view wx:for='{{item.apps}}' wx:index="index" wx:key="key" class='app-item' bindlongpress="showShareGameModule" data-apptitle='{{item.title}}' data-avatar='{{item.imgUrl}}' data-desc="{{item.players}}"> 
+        <view class="app-item-content">
+         <navigator data-aid="{{item.id}}" style='margin-left:17rpx' data-appId="{{item.appId}}" class="start-navigator" target="miniProgram" open-type='navigate' app-id="{{item.appId}}"  bindtap='gemePv' path="{{item.path}}">
+          <image class="app-image" src='{{item.imgUrl}}' mode='aspectFit'></image>
+          </navigator>
+          <view class='content-title'>
+            {{item.title}}
+          </view>
+           <!-- <view class='content-play'>
+              <view class="section-color">{{item.players}}</view><label>人在玩</label>
+          </view> -->
+        </view>
+
+
+
+
+
+        <!-- end -->
+
+      </view>
+      </view>
+      </view>
+      <view class='baseline'>{{baseline}}</view>
+ 
+  </block>
+  </scroll-view>
+  
+
+
+<view class='main'> 
+
+</view>
+
+
+<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+<view class="show" bindtap='hideview' style='display:{{display}}'>
+    <image   src="../../images/tsptip.gif"></image>
+</view>
+
+<view class="sigebg" bindtap='hidesige' style='display:{{sigeplay}}'></view>
+<view class="sigeshow" bindtap='hidesige' style='display:{{sigeplay}}'>
+    <image  src="{{showsjpng}}"></image>
+</view>
+
+</view>
+
+
+
+                <!-- 长按显示游戏分享弹框 -->
+      <!--蒙层-->
+          <view class='mask' bindtap='clickMask' wx:if='{{popuphidden}}'></view>
+              <view class="modalDlg" wx:if='{{popuphidden}}'>
+                  <view class='cheng-view'>
+                          <view class="avater"><image src='{{gameAvatar}}' style='width:100%;height:100%'></image></view>
+                          <view class="game-title">{{gameTitle}}</view>
+                          <view class='game-desc'>{{gameDesc}}</view>
+                          <button class='game-share-btn' open-type='share'>分享</button>
+                          <view class="gameShareTip">分享至群可以获得大量水晶</view>
+                  </view>
+              </view>
+
+
+
+  

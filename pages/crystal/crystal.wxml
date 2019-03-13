@@ -1,0 +1,83 @@
+<!--pages/crystal/crystal.wxml-->
+<view bindtap='hideTips'>
+  <view class="top-banner">
+    <view class='avatar'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="top-right">
+      <view class='shuijingSum'>拥有：{{shuijing}}水晶</view>
+      <view class="goChou">
+        <navigator target="miniProgram" open-type="navigate" app-id="wxa8d04da78e0b0fdb" path="{{drawpath}}" version="trial">
+          <button bindtap='godraw' class="btnDraw">去抽奖<view class="redDos" wx:if="{{showReddos}}"></view></button>
+        </navigator>
+        <image src='../../images/yiwen.png' class='wenhao' catchtap='showTips'></image>
+      </view>
+      <!-- <view><image src=''></image></view> -->
+      <view wx:if="{{tipsModule}}">
+        <view class="sanjiao"></view>
+        <view class="tips-content">
+          <view class="table">水晶可用来参加“转盘抽个奖”，现金奖多多，快去试试吧！</view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+  <view class='content'>
+    <view class="doub-view">
+      <view class="fir-view">
+        <view class="small-wrapper">
+          <view class='left-title'>每日签到</view>
+          <view class="add-crystal">+5水晶</view>
+        </view>
+        <view class="right-wrapper">已完成</view>
+      </view>
+      <view class="sec-view">
+        <view class="small-wrapper">
+          <view class='left-title'>分享微信群</view>
+          <view class="add-crystal">+20水晶</view>
+        </view>
+        <button class="shareBtn" wx:if="{{!notDone}}" open-type='share'>去分享</button>
+        <button class="shareBtn2" wx:if="{{notDone}}" open-type='share'>已完成</button>
+      </view>
+    </view>
+    <view class="genel-view">
+      <view class="small-wrapper">
+        <view class='left-title'>每日玩两款小游戏({{playcount}}/2)</view>
+        <view class="add-crystal">+10水晶</view>
+      </view>
+      <view class="notDone" wx:if="{{!notplayDone}}">未完成</view>
+      <view class="right-wrapper" wx:if="{{notplayDone}}">已完成</view>
+    </view>
+    <view class="genel-view">
+      <view class="small-wrapper">
+        <view class='left-title'>长按三款游戏图标分享至群({{sharecount}}/3)</view>
+        <view class="add-crystal">+5水晶</view>
+      </view>
+      <view class="notDone" wx:if="{{!notsharegameDone}}">未完成</view>
+      <view class="right-wrapper" wx:if="{{notsharegameDone}}">已完成</view>
+    </view>
+    <view class="head">
+       <block wx:if="{{banner}}">
+        <swiper indicator-dots="true" 
+          autoplay="true" interval="{{interval}}" duration="{{duration}}" circular='true'>
+          <block wx:for="{{banner}}" wx:key='item.id'>
+          <navigator target="miniProgram" open-type='navigate' app-id="{{item.appId}}" path="{{item.path}}">
+            <swiper-item data-d='{{item.appId}}' data-p='{{item.path}}' bindtap='toapp'>
+              <image src="{{item.imgUrl}}" class="slide-image" mode='widthFix' />
+            </swiper-item>
+            </navigator>
+          </block>
+        </swiper>
+        </block>
+    </view>
+    <!-- <view class="sevice">游戏收录对接，请联系客服</view> -->
+  </view>
+  <view class='csdimg'>
+    <button open-type='contact'>
+      <image src="{{csdPng}}"></image>
+    </button>
+  </view>
+
+</view>

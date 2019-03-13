@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/promotion/promotion",
+    "pages/crystal/crystal"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "熊猫游戏盒子",
+    "navigationBarTextStyle": "black"
+  },
+    "tabBar": {
+      "borderStyle":"black",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "游戏",
+          "selectedIconPath":"images/gameS.png",
+          "iconPath":"images/gameN.png",
+          "selectedColor":"#FE9E00"
+        },
+        {
+           "pagePath":"pages/crystal/crystal",
+           "text":"水晶",
+           "selectedIconPath": "images/crystalS.png",
+           "iconPath": "images/crystalN.png"
+        }
+        ],
+        "backgroundColor":"#fff",
+        "selectedColor":"#FE9E00"
+  }
+}
